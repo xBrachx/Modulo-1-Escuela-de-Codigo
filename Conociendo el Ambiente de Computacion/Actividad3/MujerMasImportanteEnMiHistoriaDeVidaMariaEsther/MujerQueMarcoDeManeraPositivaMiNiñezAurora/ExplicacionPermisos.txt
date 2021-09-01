@@ -1,0 +1,14 @@
+los permisos o derechos que los usuarios pueden tener sobre determinados archivos contenidos en él se establecen en tres niveles claramente diferenciados. Estos tres niveles son los siguientes:
+
+<° Permisos del propietario.
+<° Permisos del grupo.
+<° Permisos del resto de usuarios (o también llamados “los otros”).
+Los siguientes nueve caracteres son los permisos que se les concede a los usuarios del sistema. Cada tres caracteres, se referencian los permisos de propietario, grupo y resto de usuarios.
+
+Los caracteres que definen estos permisos son los siguientes:
+
+Permiso	Identifica
+–	Sin permiso
+r	Permiso de lectura
+w	Permiso de escritura
+x	Permiso de ejecución

@@ -1,0 +1,44 @@
+los permisos o derechos que los usuarios pueden tener sobre determinados archivos contenidos en él se establecen en tres niveles claramente diferenciados. Estos tres niveles son los siguientes:
+
+<° Permisos del propietario.
+<° Permisos del grupo.
+<° Permisos del resto de usuarios (o también llamados “los otros”).
+Los siguientes nueve caracteres son los permisos que se les concede a los usuarios del sistema. Cada tres caracteres, se referencian los permisos de propietario, grupo y resto de usuarios.
+
+Los caracteres que definen estos permisos son los siguientes:
+
+Permiso	Identifica
+–	Sin permiso
+r	Permiso de lectura
+w	Permiso de escritura
+x	Permiso de ejecución
+
+
+Para aprender a identificar los atributos de un archivo/directorio y determinar cuáles son los permisos y propietarios siga los siguientes pasos:
+
+Diríjase a un directorio de su preferencia y ejecute el comando ls -l. Observe el siguiente ejemplo:
+Anexo 1 Ejemplo de usuario y grupo
+Al ejecutar el comando, veremos una lista de los archivos y subdirectorios que contiene el directorio actual (pwd). En este ejemplo podemos ver el script AnalisisRed.sh acompañado de varios parámetros que iremos entendiendo a lo largo del tutorial.
+El tercer parámetro indica el usuario al cual pertenece el archivo: rubencs. El parámetro que le sigue indica el grupo propietario del archivo: operadoresred. Este último parámetro podría ser igual al usuario si este no está asociado a ningún grupo.
+El siguiente parámetro que debemos ver con cuidado es la secuencia -rw-rw-r--, ¿Alguna vez se ha preguntado qué significa cada una de estas letras?, hay que mirarlo paso a paso:
+Esta secuencia contiene diez (10) caracteres que indican los permisos del archivo o directorio. Para entenderlo debemos dividir la secuencia en el primer carácter y tres grupos de tres caracteres. Miremos más de cerca el archivo del ejemplo:
+Anexo 2 Ejemplo de permisos
+Tal como se observa en la imagen arriba, el primer carácter indica el tipo de archivo. El primer grupo revela los permisos del usuario propietario del archivo, el siguiente muestra los permisos del grupo propietario y el último grupo indica los permisos que regirán al resto de los usuarios.
+Cada una de las letras indica el tipo de permiso, y cada grupo de tres caracteres está ordenado en la forma rwx, así:
+r indica read o permiso de lectura;
+w indica write o permiso de escritura;
+x indica execute o permiso de ejecución.
+- el guion indica que el archivo o directorio carece del permiso correspondiente en dicha posición. Por ejemplo, si en el grupo de permisos del propietario aparece r--, significa que el usuario propietario solo tiene permisos para leer o visualizar el archivo.
+Tipos de archivo
+Tal como se mencionó, el primer parámetro indica el tipo de fichero, existen tres principales:
+- indica un archivo regular;
+d indica directorios o carpetas;
+l o link indica que es un enlace simbólico;
+Permisos de lectura
+Este permiso indica que el usuario puede leer o visualizar el contenido de un archivo. Si un usuario tiene permiso de lectura de una carpeta, entonces este podrá ver el contenido de dicho directorio. Para el caso de nuestro ejemplo:
+Anexo 3 Permisos de lectura
+Permisos de escritura
+Los permisos de escritura en un archivo simplemente indican que el usuario puede modificar el contenido del archivo y sus permisos usando chmod o chown. El usuario también podrá eliminar el archivo si tiene permisos de escritura. Cuando el permiso aplica a un directorio, el usuario puede modificar el contenido dentro de dicho directorio e incluso eliminarlo. Para nuestro ejemplo:
+Anexo 4 Permisos de escritura
+Permisos de ejecución
+El permiso de ejecución se explica por sí solo: un usuario puede ejecutar un archivo solo si posee este tipo de permisos (los archivos ejecutables son las aplicaciones y scripts). En nuestro ejemplo, el archivo AnalisisRed.sh es un script, veamos quiénes poseen permisos para ejecutarlo:
